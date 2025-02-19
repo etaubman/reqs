@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generated Responses</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Generated Responses</h1>
+    <p style="text-align:center;color:darkslategrey;"><a href="/">Back to Brainstorm</a></p>
+    <table id="requests-table" border="1" width="100%" cellspacing="0" cellpadding="8">
+      <thead>
+        <tr>
+          <th style="text-align:center;">Submission Time</th>
+          <th style="text-align:left;">Epic Title</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    fetch('/api/feature-requests')
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.querySelector('#requests-table tbody');
+        data.forEach(item => {
+          const tr = document.createElement('tr');
+          
+          const tdTime = document.createElement('td');
+          tdTime.style.textAlign = 'center';
+          tdTime.textContent = item.submission_time;
+          tr.appendChild(tdTime);
+          
+          const tdTitle = document.createElement('td');
+          tdTitle.style.textAlign = 'left';
+          const a = document.createElement('a');
+          a.href = `/generated/${item.response_md5}`;
+          a.textContent = item.epic_title || "N/A";
+          tdTitle.appendChild(a);
+          tr.appendChild(tdTitle);
+          
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading feature requests:', error);
+      });
+  </script>
+</body>
+</html>

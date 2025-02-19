@@ -1,0 +1,4 @@
+/api/venv/
+/api/__pycache__/
+feature_requests.db
+.env

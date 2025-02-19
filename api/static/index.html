@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Brainstorm</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Epic Brainstormer</h1>
+    <!-- NEW: Navigation link to Generated Responses page -->
+    <p style="text-align:center;color:darkslategrey;"><a href="/generated">View Generated Responses</a></p>
+    <!-- Main input -->
+    <!-- A 3-line input box for a high-level feature description -->
+     <h3>Enter your feature idea:</h3>
+    <textarea id="feature-input" rows="4" placeholder="e.g. ability to create multiple hierarchies of document taxonomies and associate document types and metadata fields (required or optional) to them"></textarea>
+    <button id="submit-button">Generate Epic & Stories</button>
+    <!-- Moved Ideas section with new actions -->
+    <div id="ideas-container">
+      <div id="ideas-actions">
+        <button id="refresh-ideas" type="button">Refresh Idea Suggestions</button>
+        <button id="add-focus" type="button">Add Suggestions Focus</button>
+      </div>
+      <p style="text-align:center;color:gray;font-style:italic;">Suggestions for Feature Ideas</p>
+      <div id="ideas-buttons">
+        <!-- ideas buttons will be dynamically injected here -->
+      </div>
+
+    </div>
+    <!-- The result area where transformed HTML will be displayed -->
+    <!-- NEW: Download Markdown button, hidden by default -->
+    <div id="download-markdown-container" style="display: none;">
+      <button id="download-markdown">Download Markdown</button>
+    </div>
+
+    <div id="result"></div>
+    <!-- NEW: Download Markdown button, hidden by default -->
+   </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

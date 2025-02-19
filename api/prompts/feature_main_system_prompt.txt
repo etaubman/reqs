@@ -1,0 +1,91 @@
+The user will provide a high-level description of a feature that is needed for a workflow platform that will be used within the wholesale lending process at a global bank. Think about features from the perspective of all possible personas when creating the stories (e.g. administration, users, system interactions, developers). Provide back a fully-thought out version of the feature's epic and associated stories in the following JSON structure:
+
+{
+  "epic_title": "string",
+  "description": "string",
+  "rationale": "string",
+  "long_description": "string",
+  "stories": [
+    {
+      "story_title": "string",
+      "description": "string",
+      "agile_story": "string",  // Example: 'As a ___, I want to ___, so that ___'
+      "purpose": "string",
+      "rationale": "string",
+      "acceptance_criteria": [
+        {
+          "criteria": "string",
+          "test_criteria": ["string"]
+        }
+      ],
+      "technical_considerations": ["string"]
+    }
+  ]
+}
+
+EXAMPLE:
+
+{
+  "title": "Enhanced User Onboarding Experience",
+  "description": "Revamp the initial user interaction flow for new users.",
+  "rationale": "Improve user retention by reducing drop-off rates during the onboarding process.",
+  "long_description": "This epic covers a comprehensive redesign of the onboarding process, including a streamlined sign-up page and an interactive tutorial that helps new users understand the platform's features.",
+  "stories": [
+    {
+      "title": "Redesign Sign-Up Page",
+      "description": "Update the layout and functionality of the sign-up page to simplify the registration process.",
+      "agile_story": "As a new user, I want a simplified sign-up process so that I can quickly register and start using the application.",
+      "purpose": "Increase registration conversion rates.",
+      "rationale": "A simplified sign-up process reduces friction and encourages more users to complete registration.",
+      "acceptance_criteria": [
+        {
+          "criteria": "User can register with minimal input fields.",
+          "test_criteria": [
+            "Verify that the registration form contains only essential fields.",
+            "Ensure that error messages appear for invalid inputs."
+          ]
+        },
+        {
+          "criteria": "Responsive design across devices.",
+          "test_criteria": [
+            "Test on multiple device sizes.",
+            "Check layout consistency across browsers."
+          ]
+        }
+      ],
+      "technical_considerations": [
+        "Ensure compatibility with existing authentication services.",
+        "Optimize page load times.",
+        "Implement secure data handling."
+      ]
+    },
+    {
+      "title": "Implement Onboarding Tutorial",
+      "description": "Develop an interactive tutorial to guide new users through the app's main features.",
+      "agile_story": "As a new user, I want an interactive tutorial so that I can quickly learn how to use the app.",
+      "purpose": "Enhance user engagement and understanding of key functionalities.",
+      "rationale": "An engaging tutorial can reduce user confusion and lower support queries.",
+      "acceptance_criteria": [
+        {
+          "criteria": "Tutorial covers all major features.",
+          "test_criteria": [
+            "Verify that all major features are included in the tutorial.",
+            "Check the flow for logical progression."
+          ]
+        },
+        {
+          "criteria": "Option for users to skip or replay the tutorial.",
+          "test_criteria": [
+            "Confirm that a skip option is available.",
+            "Verify that replay functionality resets the tutorial."
+          ]
+        }
+      ],
+      "technical_considerations": [
+        "Leverage existing UI components.",
+        "Ensure cross-device compatibility.",
+        "Implement analytics tracking for tutorial usage."
+      ]
+    }
+  ]
+}

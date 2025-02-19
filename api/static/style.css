@@ -1,0 +1,203 @@
+/* Reset & base styling */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Container styling */
+  .container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Headings */
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Textarea & Button */
+  textarea {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background-color: #4cae4c;
+  }
+  
+  /* Result area styling */
+  #result {
+    margin-top: 20px;
+  }
+  
+  /* Epic section styling */
+  .epic {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .epic-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .epic-description,
+  .epic-rationale,
+  .epic-long-description {
+    margin-bottom: 10px;
+  }
+  
+  /* Story card styling */
+  .story {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fafafa;
+  }
+  
+  .story h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #007bff;
+  }
+  
+  .story-section {
+    margin-bottom: 10px;
+  }
+  
+  .story-section strong {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  /* Lists styling */
+  .acceptance-criteria,
+  .technical-considerations {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .test-criteria {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: circle;
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* NEW: Ideas section styling */
+  #ideas-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #ideas-container button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #ideas-container #refresh-ideas {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    width: auto;
+    padding: 4px 8px;
+  }
+  .idea-button {
+    display: block;
+    width: auto; /* override full-width global style */
+    padding: 1px 1px;  /* smuch smaller */
+    background-color: #f0f0f0; /* subtler background */
+    color: #666;
+    font-style: italic;
+    font-size: 6px;  /* even smaller font */
+    border-radius: 4px;
+    vertical-align: middle;
+    transition: opacity 0.3s ease;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .idea-button:hover {
+    opacity: 0.7;
+    background-color: #666 !important;
+    color: white !important;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Center align idea buttons within their container */
+  #ideas-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* NEW: Ideas actions inline container */
+  #ideas-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* NEW: Ghost button styling for both "refresh ideas" and "add focus" */
+  #ideas-actions button {
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    width: auto;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+
+  /* Spinner styling for better loading indicator */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4cae4c;
+  animation: spin 1s linear infinite;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 20px auto;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

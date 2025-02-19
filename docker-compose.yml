@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "4200:8000" # Host:Container
+    env_file: 
+      - ./api/.env
+    environment:
+      VIRTUAL_HOST: reqs.ethantaubman.com
+      VIRTUAL_PORT: 4200
+      VIRUTL_ROOT: /
+    volumes:
+      - "./api/static:/app/static"  # Ensure /app/static exists in the container
+    networks:
+      - web
+      - internal
+    restart: always
+
+networks:
+  internal:
+    driver: bridge
+  web:
+    external: true

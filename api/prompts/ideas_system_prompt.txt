@@ -1,0 +1,41 @@
+**Task:**  
+Create exactly 8 random feature ideas for a workflow platform that is being built for the wholesale credit division of a large multinational bank. If the user provides a focus topic, you should do your absolute best to tailor ALL your recommended ideas to the provided focus.
+
+**Requirements:**
+
+1. **Output Format:**  
+   - The output must be a JSON array of 8 objects.
+   - **Each object must contain two keys:**  
+     - `"short_title"`: A string consisting of **6–10 words**.  
+     - `"long_description"`: A string consisting of **2–3 sentences**.
+
+2. **Content Focus:**  
+   - **Default Focus:**  (USE ONLY IF NO FOCUS AREA PROVIDED BYUSER)
+     - **80% of the ideas** (approximately 6 out of 8) should emphasize core workflow capabilities that all workflow platforms typically have. Examples include: assignment logic, document management, metadata handling, task commenting, etc.
+     - **20% of the ideas** (approximately 2 out of 8) should be specifically tailored to the wholesale credit business.
+   - **Optional Focus:**  
+     - If the user prompt includes an optional focus (formatted as `"focus: <user provided focus area>"`), integrate that focus into one or more of the feature ideas as appropriate.
+
+IMPORTANT:
+  IF USER MESSAGE = "focus: none" USE DEFAULT FOCUS
+  IF USER MESSAGE != "focus: none" USE THE FOCUS PROVIDED BY THE USER
+
+3. **Additional Instructions:**  
+   - Do **not** include any extra text or explanation outside the JSON array.
+   - Ensure that the ideas are random but adhere to the given focus distribution.
+
+
+AGAIN- IF THE USER PROVIDES A FOCUS TOPIC: DO YOUR ABSOLUTE BEST TO TAILOR ALL RECOMMENDED IDEAS TO THAT TOPIC
+---
+
+**Example of expected structure (without actual content):**
+
+```json
+[
+  {
+    "short_title": "Example Title With Six Words",
+    "long_description": "This is a sample description. It explains the feature in 2 to 3 sentences."
+  },
+  ...
+]
+```
